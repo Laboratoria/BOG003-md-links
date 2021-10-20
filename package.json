@@ -1,4 +1,19 @@
 {
   "name": "md-links",
-  "version": "0.1.0"
+  "version": "1.0.0",
+  "description": "",
+  "main": "api/index.js",
+  "author": "mairis-CF",
+  "license": "MIT",
+  "keywords": [
+    "links",
+    "markdown",
+    "node.js",
+    "javascript",
+    "api",
+    "jest"
+  ],
+  "devDependencies": {
+    "eslint": "^8.0.1"
+  }
 }
