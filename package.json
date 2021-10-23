@@ -14,6 +14,10 @@
     "jest"
   ],
   "devDependencies": {
-    "eslint": "^8.0.1"
+    "eslint": "^8.0.1",
+    "filehound": "^1.17.5"
+  },
+  "dependencies": {
+    "jshint": "^2.13.1"
   }
 }

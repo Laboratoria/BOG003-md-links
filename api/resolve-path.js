@@ -33,15 +33,32 @@ isFile, que evalua si la ruta entregada dirige a un archivo o no. Usar el métod
 isFile tal como en la función anterior, pues es la forma en la que este funciona. La función isPathFile retorna un valor boolenano*/
 const isPathFile = ruta => fs.statSync(ruta).isFile();
 
-console.log(isPathAbsolute('markdown/text.md'))
-console.log(isPathFile('/home/mairis/Documentos/BOG003-md-links/markdown/text.md'))
-
-
 /*la función fileExtension emplea el método extname del modulo path para analizar una ruta entregada, encontrar el archivo en la ruta
 y retornar su extensión. Si no existe un archivo en la ruta, retorna un string vacio.*/
 const fileExtension = ruta => path.extname(ruta)
-console.log(fileExtension('/home/mairis/Documentos/BOG003-md-links/markdown'))
 
+/*la función solvePath exportada al final de este archivo, recibe como parametro una ruta y retorna en un objeto el proceso de esa ruta
+por medio de las funciones descritas en su interior. El resultado esperado es:
+-Un valor boolenano para ruta existente
+-una ruta absolute
+-un valor booleano para evaluar si se trata de un archivo 
+-un valor booleano para evaluar si se trata de un directorio
+-la extensión del o los archivos encontrados
+*/
+const solvePath = ruta => {
+    const pathReturn = new Object()
+
+    pathReturn.existPath = pathExist(ruta)
+    pathReturn.absolutePath = isPathAbsolute(ruta)
+    pathReturn.isFile = isPathFile(ruta)
+    pathReturn.isDirectory = isPathDirectory(ruta)
+    pathReturn.fileExtension = fileExtension(ruta)
+
+ return pathReturn
+} 
+
+
+module.exports = solvePath;
 /* const isPathValid = ruta => {
     return new Promise((resolve, reject) => {
         if (isPathExist(ruta)) {
