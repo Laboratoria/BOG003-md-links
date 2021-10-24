@@ -10,7 +10,7 @@ const readDirectory = ruta => {
             .paths(ruta)//se le indica dónde realizará la busqueda
             .ext('md')//se expecifica qué tipo de archivos buscará
             .findSync();//se especifica la naturaleza de la busqueda (en este caso, es una busqueda síncrona)
-            
+
     return mdFiles.length === 0 ?
     console.log(`No existen archivos .md en la ruta: ${ruta}`) : mdFiles.concat(mdFiles.length)
 //si la longitud del array mdFiles es o (o sea, si no existen archivos .md en la ruta) se retorna un mensaje en consola
@@ -49,5 +49,7 @@ const readPath = ruta => {
 }
 
 
- console.log('*Qué hay en la ruta?*', readPath('/home/mairis/Documentos/BOG003-md-links/prueb'))
+// console.log('*Qué hay en la ruta?*', readPath('/home/mairis/Documentos/BOG003-md-links/prueba'))
+// Ejemplo de uso
 
+module.exports = readPath;
